@@ -27,10 +27,12 @@ var main = function(){
     
     $(emails).each(function(index, address) {
       $('span[email="' + address + '"].gD').each(function() {
-        console.log(this);
-        var $a = $('<a href="http://' + address.substring(address.indexOf("@") + 1) + '"> ' + address.substring(address.indexOf("@") + 1) + '</a>');
+        // console.log(this);
+        var url = address.substring(address.indexOf("@") + 1);
+        var $a = $('<a href="http://' + url + '"> ' + url + '</a>');
         $(this).parent().append($a);
-        console.log("here!!");
+        var $i = $('<img class="fav" src="http://www.google.com/s2/favicons?domain=www.' + url + '">');
+        $(this).parent().prepend($i);
       });
     });
 
