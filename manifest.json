@@ -1,17 +1,27 @@
 {
   "manifest_version": 2,
   "name": "User Domain",
-  "version": "0.0",
+  "version": "0.2",
   
   "permissions": [
-    "debugger"
+    "debugger",
+    "*://mail.google.com/*",
+    "webRequest",
+    "activeTab"
   ],
   
-  "background": {
-    "scripts": [
-      "addLink.js"
-    ],
-    "persistent": false
-  }
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/*"],
+      "css": ["mystyles.css"],
+      "js": ["jquery-2.1.3.min.js", "content.js"]
+    }
+  ],
+  
+  "web_accessible_resources": [
+      "jquery-2.1.3.min.js",
+      "gmail.js",
+      "main.js"
+    ]
   
 }
