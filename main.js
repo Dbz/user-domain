@@ -28,7 +28,7 @@ var main = function(){
     $(emails).each(function(index, address) {
       $('span[email="' + address + '"].gD').each(function() {
         console.log(this);
-        var $a = $('<a href="www.' + address.substring(address.indexOf("@") + 1) + '"> http://' + address.substring(address.indexOf("@") + 1) + '</a>');
+        var $a = $('<a href="http://' + address.substring(address.indexOf("@") + 1) + '"> ' + address.substring(address.indexOf("@") + 1) + '</a>');
         $(this).parent().append($a);
         console.log("here!!");
       });
