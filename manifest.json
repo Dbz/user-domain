@@ -4,10 +4,7 @@
   "version": "0.2",
   
   "permissions": [
-    "debugger",
-    "*://mail.google.com/*",
-    "webRequest",
-    "activeTab"
+    "*://mail.google.com/*"
   ],
   
   "content_scripts": [
